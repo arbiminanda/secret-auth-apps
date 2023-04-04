@@ -1,7 +1,8 @@
 const db = require("../models");
 const User = db.User;
 require("dotenv").config();
-const hash = require(process.env.HASH_METHOD);
+const hashMethod = require(process.env.HASH_METHOD);
+const saltRounds = Number(process.env.SALT_ROUNDS);
 
 exports.loginPage = (req, res) => {
   res.render("login");
@@ -10,7 +11,7 @@ exports.loginPage = (req, res) => {
 exports.userLogin = (req, res) => {
   credentials = {
     username: req.body.username,
-    password: hash(req.body.password),
+    password: hashMethod.hashSync(req.body.password, saltRounds),
   };
   User.findOne({ email: credentials.username })
     .then((userData) => {
