@@ -16,6 +16,10 @@ app.get("/", function (req, res) {
   res.render("home");
 });
 
+app.get("/register", function (req, res) {
+  res.render("register");
+});
+
 app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
