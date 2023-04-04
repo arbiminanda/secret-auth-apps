@@ -12,17 +12,9 @@ app.use(
   })
 );
 
-app.get("/", function (req, res) {
-  res.render("home");
-});
-
-app.get("/register", function (req, res) {
-  res.render("register");
-});
-
-app.get("/login", function (req, res) {
-  res.render("login");
-});
+require("./app/routes/home.routes")(app);
+require("./app/routes/login.routes")(app);
+require("./app/routes/register.routes")(app);
 
 app.listen(3000, function () {
   console.log("Server started on port 3000");
