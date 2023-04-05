@@ -37,6 +37,7 @@ passport.deserializeUser(db.User.deserializeUser());
 require("./app/routes/home.routes")(app);
 require("./app/routes/login.routes")(app);
 require("./app/routes/register.routes")(app);
+require("./app/routes/secrets.routes")(app);
 
 app.listen(3000, function () {
   console.log("Server started on port 3000");

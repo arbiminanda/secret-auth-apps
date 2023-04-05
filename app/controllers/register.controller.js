@@ -10,7 +10,7 @@ exports.registerPage = (req, res) => {
 exports.createUser = (req, res) => {
   User.register({ username: req.body.username }, req.body.password).then(() => {
     passport.authenticate("local")(req, res, function () {
-      res.render("secrets");
+      res.redirect("secrets");
     });
   });
 };
