@@ -1,12 +1,12 @@
 // const encrypt = require("mongoose-encryption");
 // require("dotenv").config();
+const passportLocalMongoose = require("passport-local-mongoose");
 
 module.exports = (mongoose) => {
   const userSchema = mongoose.Schema({
     email: String,
     password: String,
   });
-  //   const secret = process.env.SECRET_KEY;
-  //   userSchema.plugin(encrypt, { secret: secret, encryptedFields: ["password"] });
+  userSchema.plugin(passportLocalMongoose);
   return mongoose.model("User", userSchema);
 };
