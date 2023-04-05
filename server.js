@@ -63,6 +63,7 @@ require("./app/routes/secrets.routes")(app);
 require("./app/routes/logout.routes")(app);
 require("./app/routes/google-auth/auth.routes")(app);
 require("./app/routes/google-auth/secrets.routes")(app);
+require("./app/routes/submit.routes")(app);
 
 app.listen(3000, function () {
   console.log("Server started on port 3000");

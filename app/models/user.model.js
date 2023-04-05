@@ -6,6 +6,7 @@ module.exports = (mongoose) => {
     email: String,
     password: String,
     googleId: String,
+    secret: String,
   });
   userSchema.plugin(passportLocalMongoose);
   userSchema.plugin(findOrCreate);
