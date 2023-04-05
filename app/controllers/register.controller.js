@@ -1,6 +1,5 @@
 const db = require("../models");
 const User = db.User;
-require("dotenv").config();
 const passport = require("passport");
 
 exports.registerPage = (req, res) => {

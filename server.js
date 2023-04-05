@@ -4,6 +4,7 @@ const ejs = require("ejs");
 const db = require("./app/models");
 const passport = require("passport");
 const session = require("express-session");
+require("dotenv").config();
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(
 
 app.use(
   session({
-    secret: "GFSfuf786fgTF876BUFYhgjhg57676",
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: false,
   })
